@@ -9,17 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/dolgozo")
+@RequestMapping("/primszam")
 public class DolgozoController {
 
-    @GetMapping("/{counter}")
-    public List<szam> index(@PathVariable(name = "counter") int counter){
-        List<szam> szamok = new ArrayList<szam>();
-        for(int i=1 ; i<= counter ; i++){
-            szamok.add(new szam(i));
+    @GetMapping("/{prime}")
+    public String index(@PathVariable(name = "prime") long prime){
+        String result = "primszám";
+        if(prime == 0 || prime==1) result="nem prímszám";
+        for(int i=2 ; i<= Math.sqrt(prime) ; i++){
+            if(prime % i == 0 ) {
+                result="nem prímszám";
+                break;
+            }
         }
 
-        return szamok;
+        return result;
     }
 
     public class szam {
