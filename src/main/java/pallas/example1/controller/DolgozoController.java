@@ -11,7 +11,7 @@ import pallas.example1.Kocka;
 public class DolgozoController {
 
     @GetMapping("")
-    public Alakzat index(){
+    public String index(){
 
 /*
         Kocka kocka = new Kocka();
@@ -19,6 +19,6 @@ public class DolgozoController {
         kocka.setSzin("piros");
 */
         Alakzat a = new Alakzat();
-        return a;
+        return "Stia világ!";
     }
 }
