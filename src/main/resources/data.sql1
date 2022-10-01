@@ -1,0 +1,2 @@
+insert into szerzo (id,nev,cim,eletkor) values (1,'Dezső','Kolozsvár',76);
+insert into szerzo (id,nev,cim,eletkor) values (2,'Anna','Budapest',46);
