@@ -18,8 +18,20 @@ import java.util.List;
 public class MainController {
 
     @GetMapping(value = "/")
-    public String iroda(Model model){
-
-        return "Dev";
+    public Szerzo iroda(Model model){
+        Szerzo sz1 = new Szerzo("Balázs", 32, "Budapest", new ArrayList<Cikk>());
+        ArrayList<Mufaj> drama_thiller = new ArrayList<Mufaj>();
+        drama_thiller.add(new Mufaj("drama"));
+        drama_thiller.add(new Mufaj("thiller"));
+        sz1.getCikkek().add(
+                new Cikk(
+                        "Budapest látképe",
+                        " jkhkhklh khkh klhlkh kjh kh lk",
+                        Date.valueOf("2020-04-01"),
+                        drama_thiller
+                )
+        );
+        sz1.getCikkek().add(new Cikk("Pécs látképe"," 111111 khkh klhlkh kjh kh lk",Date.valueOf("2021-08-01")));
+        return sz1;
     }
 }
